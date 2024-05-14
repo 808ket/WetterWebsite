@@ -8,8 +8,7 @@
             href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     />
 
-    <link rel="stylesheet" href = "jetbrains://web-storm/navigate/reference?project=WetterWebsite&path=style.css"/>
-
+    <link rel="stylesheet" href = "../css/style.css"/>
     <title><%= subject %></title>
 </head>
 <body>
@@ -32,7 +31,7 @@
                 </ul>
             </div>
         </section>
-        <div style="display: flex; background-color: blueviolet">
+        <div style="display: flex; flex-direction:column; background-color: lightskyblue">
         <div  style="border-style:outset; padding-top:0; padding-right:15px; padding-left:15px; padding-bottom: 15px">
             <div class ="centered">
                 <h2 class="city-name" data-name="stadtname">
@@ -42,7 +41,7 @@
                     <form>
                         <span class="city-temp">Stadtname</span>
 
-                        <span style="float:right" class="city-temp; fa fa-thermometer">
+                        <span style="float:right" class="city-temp; fa fa-thermometer-0">
                     <i class="fa fa-temperature" style="padding-right:8px"></i>Temperatur in <sup>°C</sup>
                 </span>
                     </form>
@@ -58,9 +57,9 @@
 
         <div style="border-style:outset; margin-top:20px; padding-right:15px; padding-left:15px; padding-bottom: 15px">
             <div class ="centered">
-                <h2 class="wanted_city-name" data-name="gesuchte_stadtname">
+                <h2  data-name="gesuchte_stadtname">
 
-                    <h3 style="padding-top:0">gesuchte Stadt</h3>
+                    <h3 class="wanted_city-name" >gesuchte Stadt</h3>
 
                     <form>
                         <span class="wanted_city-temp">Stadtname</span>
@@ -79,35 +78,6 @@
 
         </div>
 
-        <div class="split right">
-
-            <div class ="centered" style="border-style:outset; margin-top:20px; padding-right:15px; padding-left:15px; padding-bottom: 15px">
-
-                <h2 class="wanted_city-name" data-name="gesuchte_stadtname">
-
-                    <h3 style="padding-top:0">gesuchte Stadt</h3>
-
-                    <form>
-                        <span class="wanted_city-temp">Stadtname</span>
-
-                        <span style="float:right" class="wanted_city-temp; fa fa-thermometer">
-                    <i class="fa fa-temperature" style="padding-right:8px"></i>Temperatur in <sup>°C</sup>
-                </span>
-                    </form>
-                </h2>
-
-                <figure>
-                    <img class="wanted_city-icon" src="" alt="...">
-                    <figcaption>...</figcaption>
-                </figure>
-
-            </div>
-        </div>
-
-        <footer>
-            <h2>Wetter am Standort:</h2>
-            <p><a href="<%= link %>">Unsubscribe</a></p>
-        </footer>
     </div>
 </div>
 

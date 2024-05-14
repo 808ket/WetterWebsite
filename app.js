@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 app.set('view engine', 'ejs');
-
+app.use(express.static('public'))
 app.get('/user', (request, response) => {
   response.render('showUsers', {
     subject: 'Wetter',
@@ -19,6 +19,7 @@ app.get('/user/:id', (request, response) => {
     link: 'https://google.com'
   });
 });
+
 
 app.get('/', (req, res) => {
   res.render('showUsers', {
