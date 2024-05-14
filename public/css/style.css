@@ -1,3 +1,10 @@
 .wanted_city-name{
     padding-top:0
 }
+
+.container {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-auto-flow: column;
+}
