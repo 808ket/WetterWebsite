@@ -20,7 +20,6 @@ app.get('/user/:id', (request, response) => {
   });
 });
 
-
 app.get('/', (req, res) => {
   res.render('showUsers', {
     subject: 'Wetter',

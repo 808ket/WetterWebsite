@@ -14,8 +14,8 @@
     <title><%= subject %></title>
 </head>
 
-<body style="background-color: lightskyblue">
-    <div style="justify-content: flex-end">
+<body style="background-size: cover;  background-image: url('../images/backgroundsky.jpg');">
+    <div style="color:white">
         <section class="top-banner">
             <h1 class="heading" style="text-align: center; margin-bottom: 30px">Wetter Daten</h1>
         </section>
@@ -24,7 +24,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <div  style="border-style:outset; padding-top:0; padding-right:15px; padding-left:15px; padding-bottom: 15px">
+                <div  style="border-style:outset; color:white; border-color:white; padding-top:0; padding-right:15px; padding-left:15px; padding-bottom: 15px">
                     <h2 class="city-name" data-name="stadtname">
                         <h3 style="padding-top:0">Mein Standort</h3>
 
@@ -37,12 +37,15 @@
                         </form>
                     </h2>
 
-                    <i class="fa fa-cloud" style="padding-right:8px"></i>
+                    <div style="display: flex; justify-content: space-between; flex-direction: row">
+                        <figure>
+                            <img class="wanted_city-icon" src="" alt="...">
+                            <figcaption>...</figcaption>
+                        </figure>
 
-                    <figure>
-                        <img class="wanted_city-icon" src="" alt="...">
-                        <figcaption>...</figcaption>
-                    </figure>
+                        <i class="bi-sun"></i>
+                    </div>
+
 
                 </div>
             </div>
@@ -56,16 +59,12 @@
 
             </div>
             <div class="col">
-                <div style="border-style:outset; margin-top:20px; padding-right:15px; padding-left:15px; padding-bottom: 15px">
+                <div style="border-style:outset; color:white; border-color:white; margin-top:20px; padding-right:15px; padding-left:15px; padding-bottom: 15px">
                     <div class ="centered">
                         <h2  data-name="gesuchte_stadtname">
-
                             <h3 class="wanted_city-name" >gesuchte Stadt</h3>
-
                             <form>
-
                                 <span class="wanted_city-temp">Stadtname</span>
-
                                 <span style="float:right" class="wanted_city-temp; fa fa-thermometer-0">
                                     <i class="fa fa-temperature" style="padding-right:8px"></i>Temperatur in <sup>°C</sup>
                                 </span>
@@ -73,12 +72,14 @@
                         </h2>
                     </div>
 
-                    <i class="bi-sun"></i>
+                    <div style="display: flex; justify-content: space-between; flex-direction: row">
+                        <figure>
+                            <img class="wanted_city-icon" src="" alt="...">
+                            <figcaption>...</figcaption>
+                        </figure>
 
-                    <figure>
-                        <img class="wanted_city-icon" src="" alt="...">
-                        <figcaption>...</figcaption>
-                    </figure>
+                        <i class="bi-sun"></i>
+                    </div>
 
                 </div>
             </div>
