@@ -1,3 +1,52 @@
+body{
+    background-size: cover;
+    background-image: url('../images/backgroundsky.jpg')
+}
+.heading {
+    margin: 30px 0 30px 0;
+    text-align: center;
+    color: white;
+}
+.city-name-style {
+    border-style:outset;
+    color:white;
+    border-color:white;
+    padding: 0 15px 15px 15px;
+}
+.city-name {
+    padding-top:8px;
+}
+.city-temp{
+    float:right;
+}
+.fa fa-temperature {
+    padding-right:8px;
+}
+.weather-city-situation {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row
+}
+.city-title-weather-situation {
+    font-size: smaller;
+    padding-top:22px
+}
+
+.wanted-city-name-style {
+    border-style:outset;
+    color:white;
+    border-color:white;
+    padding: 0 15px 15px 15px;
+    margin-top: 20px;
+}
+.wanted-city-name {
+    padding-top:8px;
+}
+.wanted-city-temp {
+    float: right;
+}
+
+
 .wanted_city-name{
     padding-top:0
 }
@@ -8,3 +57,4 @@
     grid-template-columns: 25% 25% 25% 25%;
     grid-auto-flow: column;
 }
+

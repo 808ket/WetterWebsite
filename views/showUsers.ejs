@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://kitfont-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width" />
     <link
             rel="stylesheet"
@@ -14,39 +14,27 @@
     <title><%= subject %></title>
 </head>
 
-<body style="background-size: cover;  background-image: url('../images/backgroundsky.jpg');">
-    <div style="color:white">
-        <section class="top-banner">
-            <h1 class="heading" style="text-align: center; margin-bottom: 30px">Wetter Daten</h1>
-        </section>
+<body>
+    <div>
+        <h1 class="heading">Wetter Daten</h1>
     </div>
-
     <div class="container-fluid">
         <div class="row">
             <div class="col">
-                <div  style="border-style:outset; color:white; border-color:white; padding-top:0; padding-right:15px; padding-left:15px; padding-bottom: 15px">
-                    <h2 class="city-name" data-name="stadtname">
-                        <h3 style="padding-top:0">Mein Standort</h3>
-
-                        <form>
-                            <span class="city-temp">Stadtname</span>
-
-                            <span style="float:right" class="city-temp; fa fa-thermometer-4">
-                    <i class="fa fa-temperature" style="padding-right:8px"></i>Temperatur in <sup>°C</sup>
+                <div class="city-name-style">
+                    <h3 class="city-name" data-name="stadtname">Mein Standort</h3>
+                    <form>
+                        <span>Stadtname</span>
+                        <span class="city-temp">
+                    <i class="fa fa-temperature"></i>Temperatur in <sup>°C</sup>
                         </span>
-                        </form>
-                    </h2>
-
-                    <div style="display: flex; justify-content: space-between; flex-direction: row">
-                        <figure>
-                            <img class="wanted_city-icon" src="" alt="...">
-                            <figcaption>...</figcaption>
-                        </figure>
-
+                    </form>
+                    <div class="weather-city-situation">
+                     <h4 class="city-title-weather-situation">
+                         sonnig
+                     </h4>
                         <i class="bi-sun"></i>
                     </div>
-
-
                 </div>
             </div>
             <div class="col">
@@ -56,28 +44,20 @@
                 </form>
             </div>
             <div class="w-100">
-
             </div>
             <div class="col">
-                <div style="border-style:outset; color:white; border-color:white; margin-top:20px; padding-right:15px; padding-left:15px; padding-bottom: 15px">
-                    <div class ="centered">
-                        <h2  data-name="gesuchte_stadtname">
-                            <h3 class="wanted_city-name" >gesuchte Stadt</h3>
-                            <form>
-                                <span class="wanted_city-temp">Stadtname</span>
-                                <span style="float:right" class="wanted_city-temp; fa fa-thermometer-0">
-                                    <i class="fa fa-temperature" style="padding-right:8px"></i>Temperatur in <sup>°C</sup>
-                                </span>
-                            </form>
-                        </h2>
-                    </div>
-
-                    <div style="display: flex; justify-content: space-between; flex-direction: row">
-                        <figure>
-                            <img class="wanted_city-icon" src="" alt="...">
-                            <figcaption>...</figcaption>
-                        </figure>
-
+                <div class="wanted-city-name-style">
+                    <h3 class="wanted-city-name" data-name="gesuchte_stadtname">gesuchte Stadt</h3>
+                    <form>
+                        <span>Stadtname</span>
+                        <span class="wanted-city-temp">
+                            <i class="fa fa-temperature"></i>Temperatur in <sup>°C</sup>
+                        </span>
+                    </form>
+                    <div class="weather-city-situation">
+                        <h4 class="city-title-weather-situation">
+                            sonnig
+                        </h4>
                         <i class="bi-sun"></i>
                     </div>
 
