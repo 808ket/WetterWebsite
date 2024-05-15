@@ -19,7 +19,7 @@ body{
 .city-temp{
     float:right;
 }
-.fa fa-temperature {
+.bi-thermometer-half {
     padding-right:8px;
 }
 .weather-city-situation {
@@ -45,7 +45,6 @@ body{
 .wanted-city-temp {
     float: right;
 }
-
 
 .wanted_city-name{
     padding-top:0
