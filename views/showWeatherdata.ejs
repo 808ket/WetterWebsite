@@ -45,7 +45,7 @@
         </div>
         <div class="col">
             <form>
-                <input  type="text" placeholder="Stadt eingeben..." autofocus>
+                <input style="padding: 0.5em; width: 580px; height: 1.8em; outline: none; border: 2px solid green;" type="text" placeholder="Stadt eingeben..." autofocus>
                 <button type="submit">SUCHE</button>
             </form>
         </div>
@@ -66,14 +66,22 @@
                     </h4>
                     <i class="bi-sun"></i>
                 </div>
-
             </div>
         </div>
         <div class="col">
-            <h3>map</h3>
+            <div id="e6k8hv4n"></div>
+            <script language="JavaScript" type="text/javascript">
+                function loadMapz() {
+                    var myMapz = document.createElement("iframe");
+                    myMapz.setAttribute("src", "http://www.mapz.com/embedded/map/e6k8hv4n?lon=6.955443432150475&lat=50.91923397843401518&zoom=16");
+                    myMapz.style.width = "450px";
+                    myMapz.style.height = "450px";
+                    var element = document.getElementById('e6k8hv4n')
+                    element.appendChild(myMapz); }
+                loadMapz()
+            </script>
         </div>
     </div>
 </div>
-
 </body>
 </html>
