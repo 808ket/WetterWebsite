@@ -3,29 +3,22 @@ const app = express()
 const port = 3000
 
 app.set('view engine', 'ejs');
+
+const historieRouter= require("./routes/users");
+
 app.use(express.static('public'))
-app.get('/user', (request, response) => {
-  response.render('showUsers', {
-    subject: 'Wetter',
-    name: 'our template',
-    link: 'https://google.com'
+
+app.use('/historie', historieRouter);
+
+app.get('/', (req, res, next) => {
+  res.render('showWeatherdata',
+  {
+    subject: 'Wetter'
   });
 });
 
-app.get('/user/:id', (request, response) => {
-  response.render('showUser', {
-    subject: 'Wetter ' + request.params.id,
-    name: 'our template',
-    link: 'https://google.com'
-  });
-});
-
-app.get('/', (req, res) => {
-  res.render('showUsers', {
-    subject: 'Wetter',
-    name: 'our template',
-    link: 'https://google.com'
-  });
+app.use((req, res, ) =>{
+  res.status(404).send("404")
 })
 
 app.listen(port, () => {
