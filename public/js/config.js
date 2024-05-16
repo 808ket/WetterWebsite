@@ -4,7 +4,7 @@ const config = {
         user: "root",
         password: "",
         database: "weathersite",
-        connectTimeout: 5000
+        connectTimeout: 50000
     },
 };
 module.exports = config;

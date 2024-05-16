@@ -10,12 +10,12 @@ app.use(express.static('public'))
 
 app.use('/historie', historieRouter);
 
-app.get('/', (req, res, next) => {
+app.get('/', (req, res) => {
   res.render('showWeatherdata',
   {
     subject: 'Wetter'
-  });
-});
+  })
+})
 
 app.use((req, res, ) =>{
   res.status(404).send("404")
