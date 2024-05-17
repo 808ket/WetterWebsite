@@ -4,7 +4,7 @@ const port = 3000
 
 app.set('view engine', 'ejs');
 
-const historieRouter= require("./routes/users");
+const historieRouter= require("./routes/histories");
 
 app.use(express.static('public'))
 

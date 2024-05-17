@@ -19,7 +19,7 @@ router.get('/:id', async function (req, res, next) {
         if (!data.length) {
             next();
         } else {
-            res.render('showWeatherHistory', {subject: 'Historie', stadt: data[0].name, wetter: data[0].weathername, zeit: data[0].time, temperatur: data[0].temperature + ' °C'});
+            res.render('showWeatherHistory', {datavorhanden: true, subject: 'Historie', data: data, datalength: 1});
         }
     }
 });
@@ -31,7 +31,8 @@ router.get('/', async function (req, res, next) {
     if (!data.length) {
         next();
     } else {
-        res.render('showWeatherHistoryAll', {subject: 'Historie', message: 'Alle Daten in einer Tabelle'});
+
+        res.render('showWeatherHistory', {datavorhanden: true, data: data, subject: 'Historie', datalength: data.length});
     }
 });
 

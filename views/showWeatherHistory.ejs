@@ -5,15 +5,26 @@
         <%= subject %>
     </title>
 </head>
-
 <body>
-<h1>
-    <%= stadt %>
-    <br>
-    <%= temperatur %>
-    <br>
-    <%= wetter %>
-    <br>
-    <%= zeit %>
-</h1>
+
+<table>
+    <tr>
+        <th>Stadt</th>
+        <th>Temperatur</th>
+        <th>Wetter</th>
+        <th>Zeit</th>
+    </tr>
+    <% if(datavorhanden > 0) { %>
+        <% for (var i = 0; i < datalength; i++) { %>
+            <tr>
+                <td><%= data[i].name %></td>
+                <td><%= data[i].temperature %> °C </td>
+                <td><%= data[i].weathername %></td>
+                <td><%= data[i].time %></td>
+            </tr>
+        <% } %>
+    <% } %>
+</table>
+
 </body>
+</html>
