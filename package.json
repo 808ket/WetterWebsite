@@ -1,7 +1,7 @@
 {
   "name": "myapp",
   "version": "1.0.0",
-  "description": "Eine Website für Wettervorhersagen",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,10 +12,6 @@
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
     "ejs": "^3.1.10",
-    "express": "^4.19.2",
-    "express-promise": "^0.4.0",
-    "mysql2": "^3.9.7",
-    "mysql2-promise": "^0.1.4",
-    "promise": "^8.3.0"
+    "express": "^4.19.2"
   }
 }
