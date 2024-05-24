@@ -57,3 +57,10 @@ body{
     grid-auto-flow: column;
 }
 
+.city-output {
+    font-weight: bold;
+    text-decoration: underline;
+    display: block;
+    margin-bottom: 20px; /* Großer Abstand zu den darunter liegenden Elementen */
+}
+

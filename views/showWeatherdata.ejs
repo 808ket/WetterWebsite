@@ -54,11 +54,13 @@
             <div class="wanted-city-name-style">
                 <h3 class="wanted-city-name" data-name="gesuchte_stadtname"></h3>
                 <form>
-                    <span id="cityOutput"></span>
+                    <span id="cityOutput" class="city-output"></span>
                     <span class="wanted-city-temp">
                         <i class="bi-thermometer-half"></i><sup>°C</sup>
                     </span>
                     <p id="temperatureOutput"></p>
+                    <p id="humidityOutput"></p>
+                    <p id="windspeedOutput"></p>
                 </form>
                 <div class="weather-city-situation">
                     <h4 class="city-title-weather-situation" id="descriptionOutput"></h4>
@@ -100,7 +102,7 @@
     async function getWeather() {
         const city = document.getElementById('cityInput').value;
         const apiKey = 'a1e5d59fc6cd95597863a081482de30e';
-        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+        const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=de`;
 
         try {
             const response = await fetch(apiUrl);
@@ -110,6 +112,8 @@
             const weatherData = await response.json();
             displayTemperature(weatherData);
             displayDescription(weatherData);
+            displayHumidity(weatherData);
+            displayWindspeed(weatherData);
             displayCity(weatherData);
         } catch (error) {
             console.error('Es gab ein Problem mit der Fetch-Operation:', error);
@@ -127,6 +131,18 @@
         const descriptionOutput = document.getElementById('descriptionOutput');
         const description = data.weather[0].description;
         descriptionOutput.textContent = `Wetter: ${description}`;
+    }
+
+    function displayHumidity(data) {
+        const humidityOutput = document.getElementById('humidityOutput');
+        const humidity = data.main.humidity;
+        humidityOutput.textContent = `Luftfeuchtigkeit: ${humidity}`;
+    }
+
+    function displayWindspeed(data) {
+        const windspeedOutput = document.getElementById('windspeedOutput');
+        const windspeed = data.wind.speed;
+        windspeedOutput.textContent = `Windgeschwindigkeit: ${windspeed} m/s`;
     }
 
     function displayCity(data) {
