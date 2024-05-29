@@ -35,3 +35,15 @@ CREATE TABLE `cityweather`
     FOREIGN KEY (cityID) REFERENCES city(id),
     FOREIGN KEY (weatherID) REFERENCES weather(id)
 );
+
+CREATE TABLE `logdata`
+(
+	`id` int(11) NOT NULL,
+    `city` varchar(30) NOT NULL,
+    `temperature` DECIMAL(10, 2),
+    `humidity` int(11),
+     `windspeed` DECIMAL(10, 2)
+    `description` varchar(30) NOT NULL,
+    `time` datetime,
+    PRIMARY KEY (id)
+);
