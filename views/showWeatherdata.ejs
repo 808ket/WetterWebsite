@@ -68,19 +68,15 @@
 
         <div class="col">
             <div id="e6k8hv4n"></div>
-            <script language="JavaScript" type="text/javascript">
-                function loadMapz() {
-                    var myMapz = document.createElement("iframe");
-                    myMapz.setAttribute("src", "http://www.mapz.com/embedded/map/e6k8hv4n?lon=6.955443432150475&lat=50.91923397843401518&zoom=16");
-                    myMapz.style.width = "450px";
-                    myMapz.style.height = "450px";
-                    var element = document.getElementById('e6k8hv4n')
-                    element.appendChild(myMapz); }
-                loadMapz()
+            <script src="/public/js/script.js"></script>
+            <script type="text/javascript">
+                window.onload = function() {
+                    processWeather();
+                };
             </script>
         </div>
     </div>
 </div>
-<script src="/js/script.js"></script> <!-- Angepasster Pfad zur script.js-Datei -->
+<script src="/js/script.js"></script>
 </body>
 </html>
