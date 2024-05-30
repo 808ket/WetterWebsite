@@ -1,11 +1,15 @@
+let latitude, longitude;
 async function getWeather(city = null) {
     const apiKey = 'a1e5d59fc6cd95597863a081482de30e';
     let apiUrl;
+
+
     if (city) {
         apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=de`;
     } else {
         const position = await getPosition();
-        const { latitude, longitude } = position.coords;
+        latitude = position.coords.latitude;
+        longitude = position.coords.longitude;
         apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric&lang=de`;
     }
 
@@ -28,6 +32,9 @@ async function getWeather(city = null) {
             displayDescription(weatherData);
             displayHumidity(weatherData);
             displayWindspeed(weatherData);
+            weatherData.latitude = latitude;
+            weatherData.longitude = longitude;
+
         }
 
         // Log data to the database
@@ -130,8 +137,37 @@ function getPosition() {
         navigator.geolocation.getCurrentPosition(resolve, reject);
     });
 }
+ async function processWeather(city = null) {
+    try {
+        const position = await getPosition();
+        let lat = position.coords.latitude;
+        let lon= position.coords.longitude;
+        if (lat && lon) {
+            loadMapz(lat,lon);
+        } else {
+            //wenn Keinen Koordinaten verfügbar
+            loadMapz(52.520008, 13.404954);
 
-// Automatically get weather for current location on page load
+        }
+    } catch (error) {
+        console.error('Fehler beim Abrufen der Wetterdaten:', error);
+    }
+}
+function loadMapz(lat, lon) {
+    if (lat && lon) {  // Überprüfung, ob lat und lon nicht null sind
+        const myMapz = document.createElement("iframe");
+        myMapz.setAttribute("src", `http://www.mapz.com/embedded/map/e6k8hv4n?lon=${lon}&lat=${lat}&zoom=16`);
+        myMapz.style.width = "450px";
+        myMapz.style.height = "450px";
+        const element = document.getElementById('e6k8hv4n');
+        element.innerHTML = '';  // Vorherigen Inhalt löschen
+        element.appendChild(myMapz);
+    } else {
+        console.log('Koordinaten sind null, Karte wird nicht geladen.');
+    }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
     getWeather();
 });
