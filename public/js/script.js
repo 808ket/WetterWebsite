@@ -15,6 +15,7 @@ async function getWeather(city = null) {
             throw new Error('Netzwerkantwort war nicht ok ' + response.statusText);
         }
         const weatherData = await response.json();
+
         if (city) {
             displayAskedCity(weatherData);
             displayAskedTemperature(weatherData);
@@ -28,11 +29,43 @@ async function getWeather(city = null) {
             displayHumidity(weatherData);
             displayWindspeed(weatherData);
         }
+
+        // Log data to the database
+        logWeatherData(weatherData);
+
     } catch (error) {
         console.error('Es gab ein Problem mit der Fetch-Operation:', error);
         document.getElementById('weatherOutput').textContent = 'Fehler: ' + error.message;
     }
 }
+
+async function logWeatherData(data) {
+    const weatherLog = {
+        city: data.name,
+        description: data.weather[0].description,
+        humidity: data.main.humidity,
+        windspeed: data.wind.speed,
+        temperature: data.main.temp
+    };
+
+    try {
+        const response = await fetch('http://localhost:3000/logWeather', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(weatherLog)
+        });
+        if (!response.ok) {
+            throw new Error('Netzwerkantwort war nicht ok ' + response.statusText);
+        }
+        const result = await response.text();
+        console.log(result);
+    } catch (error) {
+        console.error('Es gab ein Problem mit der Log-Operation:', error);
+    }
+}
+
 
 function displayTemperature(data) {
     const temperatureOutput = document.getElementById('temperatureOutput');
@@ -102,3 +135,4 @@ function getPosition() {
 document.addEventListener('DOMContentLoaded', () => {
     getWeather();
 });
+

@@ -36,14 +36,12 @@ CREATE TABLE `cityweather`
     FOREIGN KEY (weatherID) REFERENCES weather(id)
 );
 
-CREATE TABLE `logdata`
-(
-	`id` int(11) NOT NULL,
-    `city` varchar(30) NOT NULL,
-    `temperature` DECIMAL(10, 2),
-    `humidity` int(11),
-     `windspeed` DECIMAL(10, 2)
-    `description` varchar(30) NOT NULL,
-    `time` datetime,
-    PRIMARY KEY (id)
+CREATE TABLE WeatherLogs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    city VARCHAR(100),
+    description VARCHAR(255),
+    humidity INT,
+    windspeed DECIMAL(5, 2),
+    temperature DECIMAL(5, 2),
+    log_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
