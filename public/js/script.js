@@ -37,6 +37,75 @@ async function getWeather(city = null) {
     }
 }
 
+function displayTemperature(data) {
+    const temperatureOutput = document.getElementById('temperatureOutput');
+    const temperature = data.main.temp;
+    temperatureOutput.textContent = `Temperatur: ${temperature}°C`;
+}
+
+function displayDescription(data) {
+    const descriptionOutput = document.getElementById('descriptionOutput');
+    const description = data.weather[0].description;
+    descriptionOutput.textContent = `Wetter: ${description}`;
+}
+
+function displayHumidity(data) {
+    const humidityOutput = document.getElementById('humidityOutput');
+    const humidity = data.main.humidity;
+    humidityOutput.textContent = `Luftfeuchtigkeit: ${humidity}%`;
+}
+
+function displayWindspeed(data) {
+    const windspeedOutput = document.getElementById('windspeedOutput');
+    const windspeed = data.wind.speed;
+    windspeedOutput.textContent = `Windgeschwindigkeit: ${windspeed} m/s`;
+}
+
+function displayCity(data) {
+    const cityOutput = document.getElementById('cityOutput');
+    cityOutput.textContent = `Ort: ${data.name}`;
+}
+
+function displayAskedTemperature(data) {
+    const askedTemperatureOutput = document.getElementById('askedTemperatureOutput');
+    const temperature = data.main.temp;
+    askedTemperatureOutput.textContent = `Temperatur: ${temperature}°C`;
+}
+
+function displayAskedDescription(data) {
+    const askedDescriptionOutput = document.getElementById('askedDescriptionOutput');
+    const description = data.weather[0].description;
+    askedDescriptionOutput.textContent = `Wetter: ${description}`;
+}
+
+function displayAskedHumidity(data) {
+    const askedHumidityOutput = document.getElementById('askedHumidityOutput');
+    const humidity = data.main.humidity;
+    askedHumidityOutput.textContent = `Luftfeuchtigkeit: ${humidity}%`;
+}
+
+function displayAskedWindspeed(data) {
+    const askedWindspeedOutput = document.getElementById('askedWindspeedOutput');
+    const windspeed = data.wind.speed;
+    askedWindspeedOutput.textContent = `Windgeschwindigkeit: ${windspeed} m/s`;
+}
+
+function displayAskedCity(data) {
+    const askedCityOutput = document.getElementById('askedCityOutput');
+    askedCityOutput.textContent = `gesuchte Stadt: ${data.name}`;
+}
+
+function getPosition() {
+    return new Promise((resolve, reject) => {
+        navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+}
+
+// Automatically get weather for current location on page load
+document.addEventListener('DOMContentLoaded', () => {
+    getWeather();
+});
+
 // Daten an Datenbank senden
 async function logWeatherData(weatherData) {
     const data = {
