@@ -35,3 +35,13 @@ CREATE TABLE `cityweather`
     FOREIGN KEY (cityID) REFERENCES city(id),
     FOREIGN KEY (weatherID) REFERENCES weather(id)
 );
+
+CREATE TABLE IF NOT EXISTS weatherlogs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    city VARCHAR(255) NOT NULL,
+    temperature DECIMAL(5, 2) NOT NULL,
+    humidity DECIMAL(5, 2) NOT NULL,
+    description VARCHAR(255) NOT NULL,
+    windspeed DECIMAL(5, 2) NOT NULL,
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
