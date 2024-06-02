@@ -1,33 +1,9 @@
 USE weathersite;
 
-INSERT INTO city(`id`, `name`)
-VALUES 	(1, 'Wismar'),
-		(2, 'Schwerin'),
-        (3, 'Rostock'),
-        (4, 'Stralsund'),
-        (5, 'Lübeck'),
-        (6, 'Hamburg'),
-        (7, 'Greifswald')
-        ;
-
-INSERT INTO weather(`id`, `weathername`)
-VALUES 	(1, 'wolkenlos'),
-		(2, 'sonnig'),
-        (3, 'klar'),
-        (4, 'heiter'),
-        (5, 'wolkig'),
-        (6, 'bedeckt'),
-        (7, 'trüb'),
-        (8, 'regnerisch'),
-        (9, 'windig')
-        ;
-
-INSERT INTO cityweather(`cityID`, `weatherID`, `temperature`, `time`)
-VALUES 	(2, 2, 22, '2024-05-15 10:53:00'),
-		(1, 3, 21, '2024-05-15 10:54:00'),
-        (3, 2, 21, '2024-05-15 10:54:30'),
-        (4, 9, 20, '2024-05-15 10:55:00'),
-        (5, 1, 21, '2024-05-15 10:55:30'),
-        (6, 2, 22, '2024-05-15 10:56:00'),
-        (7, 5, 20, '2024-05-15 11:00:00')
-        ;
+INSERT INTO WeatherLogs (city, temperature, humidity, description, windspeed, time)
+    VALUES ('Wismar', 21.60, 79, 'Ein paar Wolken', 4.98, '2024-06-02 13:06:22'),
+           ('Schwerin', 21.17, 81, 'Mäßig bewölkt', 4.02), '2024-06-02 13:06:48',
+           ('Rostock', 21.60, 78, 'Mäßig bewölkt', 6.60), '2024-06-02 13:07:10',
+           ('Stralsund', 21.35, 76, 'Mäßig bewölkt', 5.14, '2024-06-02 13:07:40'),
+           ('Greifswald', 21.71, 90, 'Überwiegend bewölkt', 5.77, '2024-06-02 13:08:24')
+            ;

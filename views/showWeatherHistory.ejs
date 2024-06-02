@@ -11,15 +11,19 @@
     <tr>
         <th>Stadt</th>
         <th>Temperatur</th>
+        <th>Luftfeuchtigkeit</th>
+        <th>Windgeschwindigkeit</th>
         <th>Wetter</th>
         <th>Zeit</th>
     </tr>
     <% if(datavorhanden > 0) { %>
         <% for (var i = 0; i < datalength; i++) { %>
             <tr>
-                <td><%= data[i].name %></td>
+                <td><%= data[i].city %></td>
                 <td><%= data[i].temperature %> °C </td>
-                <td><%= data[i].weathername %></td>
+                <td><%= data[i].humidity %> % </td>
+                <td><%= data[i].windspeed %> m/s </td>
+                <td><%= data[i].description %></td>
                 <td><%= data[i].time %></td>
             </tr>
         <% } %>

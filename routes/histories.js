@@ -38,14 +38,15 @@ router.get('/', async function (req, res, next) {
 
 async function getAllData() {
     const data = await db.query(
-            'SELECT city.name, weather.weathername, cityweather.temperature, cityweather.time FROM city INNER JOIN cityweather ON city.id = cityweather.cityID INNER JOIN weather ON cityweather.weatherID = weather.id'
-        );
+            //'SELECT city.name, weather.weathername, cityweather.temperature, cityweather.time FROM city INNER JOIN cityweather ON city.id = cityweather.cityID INNER JOIN weather ON cityweather.weatherID = weather.id'
+        'SELECT * FROM WeatherLogs'
+    );
     return data
 }
 
 async function getData(historyID){
     const data = await db.query(
-            'SELECT city.name, weather.weathername, cityweather.temperature, cityweather.time FROM city INNER JOIN cityweather ON city.id = cityweather.cityID INNER JOIN weather ON cityweather.weatherID = weather.id WHERE cityweather.id = ?', [historyID]
+            'SELECT * FROM WeatherLogs WHERE WeatherLogs.id = ?', [historyID]
         );
     return data
 }
