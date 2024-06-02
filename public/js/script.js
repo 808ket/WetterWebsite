@@ -37,7 +37,7 @@ async function logWeatherData(data) {
         description: data.weather[0].description,
         humidity: data.main.humidity,
         windspeed: data.wind.speed,
-        temperature: data.main.temp
+        temperature: data.main.temp,
     };
 
     try {
@@ -64,12 +64,14 @@ function displayWeatherData(data, city = null) {
     const descriptionOutput = document.getElementById(city ? 'askedDescriptionOutput' : 'descriptionOutput');
     const humidityOutput = document.getElementById(city ? 'askedHumidityOutput' : 'humidityOutput');
     const windspeedOutput = document.getElementById(city ? 'askedWindspeedOutput' : 'windspeedOutput');
+    const weatherIcon = document.getElementById(city ? 'askedWeatherIcon' : 'weatherIcon');
 
     cityOutput.textContent = `Ort: ${data.name}`;
     temperatureOutput.textContent = `Temperatur: ${data.main.temp}°C`;
     descriptionOutput.textContent = `Wetter: ${data.weather[0].description}`;
     humidityOutput.textContent = `Luftfeuchtigkeit: ${data.main.humidity}%`;
     windspeedOutput.textContent = `Windgeschwindigkeit: ${data.wind.speed} m/s`;
+    weatherIcon.src = "https://openweathermap.org/img/wn/" + data.weather[0].icon +"@2x.png";
 }
 
 function getPosition() {
