@@ -37,7 +37,7 @@ async function logWeatherData(data) {
         description: data.weather[0].description,
         humidity: data.main.humidity,
         windspeed: data.wind.speed,
-        temperature: data.main.temp,
+        temperature: data.main.temp
     };
 
     try {
@@ -97,7 +97,7 @@ function loadMapz(lat, lon) {
         myMapz.setAttribute("src", `http://www.mapz.com/embedded/map/e6k8hv4n?lon=${lon}&lat=${lat}&zoom=16`);
         myMapz.style.width = "450px";
         myMapz.style.height = "450px";
-        const element = document.getElementById('e6k8hv4n');
+        const element = document.getElementById('weathermapid');
         element.innerHTML = ''; // Vorherigen Inhalt löschen
         element.appendChild(myMapz);
     } else {
